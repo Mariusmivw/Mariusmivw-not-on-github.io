@@ -1,6 +1,23 @@
-@import url(https://necolas.github.io/normalize.css/8.0.0/normalize.css);
-
 #container {
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    /* grid-template-rows: 1fr 6fr 1fr; */
+    grid-template-columns: 1fr 6fr;
+}
+
+#header {
+    background: red;
+    grid-row: 1;
+    grid-column-end: 2;
+}
+
+#sidebar {
+    background: blue;
+    grid-row: 1;
+    grid-column-end: 2;
+}
+
+#main-content {
+    background: green;
+    grid-row: 1;
+    grid-column-end: 2;
 }
