@@ -1,5 +1,5 @@
 function toggle_sidebar() {
-	if (document.getElementById("sidebar").style.display == "block") {
+	if (document.getElementById("permanent-sidebar").style.display == "block") {
 		close_sidebar();
 	} else {
 		open_sidebar();
@@ -7,21 +7,21 @@ function toggle_sidebar() {
 }
 
 function open_sidebar() {
-	document.getElementById("sidebar").classList.add("w3-animate-left");
-	document.getElementById("sidebar").style.width = "100%";
-	document.getElementById("sidebar").style.display = "block";
+	document.getElementById("permanent-sidebar").classList.add("w3-animate-left");
+	document.getElementById("permanent-sidebar").style.width = "100%";
+	document.getElementById("permanent-sidebar").style.display = "block";
 }
 
 function close_sidebar() {
-	document.getElementById("sidebar").classList.remove("w3-animate-left");
-	document.getElementById("sidebar").classList.add("w3-animate-out-left");
+	document.getElementById("permanent-sidebar").classList.remove("w3-animate-left");
+	document.getElementById("permanent-sidebar").classList.add("w3-animate-out-left");
 
-	reloadNode(document.getElementById("sidebar"));
+	reloadNode(document.getElementById("permanent-sidebar"));
 
 	onAnimationEnd(
 		() => {
-			document.getElementById("sidebar").style.display = "none";
-			document.getElementById("sidebar").classList.remove("w3-animate-out-left");
+			document.getElementById("permanent-sidebar").style.display = "none";
+			document.getElementById("permanent-sidebar").classList.remove("w3-animate-out-left");
 		}
 	);
 
@@ -40,9 +40,9 @@ function onAnimationEnd(fn) {
 	var animationEvent = whichAnimationEvent();
 	function func() {
 		fn();
-		document.getElementById("sidebar").removeEventListener(animationEvent, func);
+		document.getElementById("permanent-sidebar").removeEventListener(animationEvent, func);
 	}
-	animationEvent && document.getElementById("sidebar").addEventListener(animationEvent, func);
+	animationEvent && document.getElementById("permanent-sidebar").addEventListener(animationEvent, func);
 }
 
 function whichAnimationEvent() {
