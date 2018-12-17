@@ -1,0 +1,97 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    --left-size: 50vw;
+}
+
+#interactive-image {
+    width: var(--left-size);
+    height: 100%;
+    position: fixed;
+    background-color: blueviolet;
+}
+
+#main {
+    padding-left: calc(100vw - var(--left-size));
+}
+
+.section {
+    --bg: rgba(var(--r), var(--g), var(--b), 0.5);
+    background: var(--bg, rgba(170, 170, 170, 0.5));
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 60vh;
+    opacity: .2;
+    padding: 10vh 32px 10vh;
+    position: relative;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-property: background, opacity, -webkit-transform;
+    transition-property: background, opacity, -webkit-transform;
+    transition-property: background, opacity, transform;
+    transition-property: background, opacity, transform, -webkit-transform
+}
+
+.section.current {
+    opacity: 1
+}
+
+.section:first-child,
+.section:last-child {
+    min-height: 80vh
+}
+
+.section .content,
+.section .title {
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s
+}
+
+.section .title {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px)
+}
+
+.section .content {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px)
+}
+
+.section.current .content,
+.section.current .title {
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.welcome {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
