@@ -151,3 +151,11 @@ h3 {
 	-ms-flex-pack: center;
 	justify-content: center
 }
+
+.welcome h1 {
+	font-size: 42px;
+}
+
+.welcome .logo {
+	margin-bottom: 32px;
+}
